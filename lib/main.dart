@@ -1,36 +1,52 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:sigma_app/pkm_tcg_screen.dart';
+import 'package:sigma_app/pokedex.dart';
+import 'package:sigma_app/pokemon_screen.dart';
+import 'package:sigma_app/toaster.dart';
+import 'package:sigma_app/toaster_screen.dart';
 
-void main() {
+main() {
   runApp(MainApp());
 }
 
 class MainApp extends StatelessWidget {
   MainApp({super.key});
 
+  // build == draw
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        backgroundColor: Colors.white,
-        drawer: Drawer(),
-        appBar: AppBar(
-          title: Text('What Is A Pavlova'),
-          titleTextStyle: TextStyle(fontSize: 32),
-          centerTitle: true,
-          backgroundColor: Color.fromARGB(0, 255, 255, 255),
-        ),
-        body: ListView.builder(
-          itemBuilder: (BuildContext context, int index) {
-            return Text('Line $index');
-          },
-        ),
-      ),
+      onGenerateRoute: (settings) {
+        if (settings.name == '/pkm-tcg') {
+          return CupertinoPageRoute(
+            builder: (context) => PkmTcgScreen(),
+          );
+        }
+
+        if (settings.name == '/???') {
+          return CupertinoPageRoute(
+            builder: (context) => toaster(),
+          );
+        }
+        if (settings.name == '/ToasterScreen') {
+          return CupertinoPageRoute(
+            builder: (context) => ToasterScreen(),
+          );
+        }
+
+        // if route is '/'
+        return CupertinoPageRoute(
+          builder: (context) => PokemonScreen(),
+        );
+      },
+      // home: PokemonScreen(),
     );
   }
 }
 
-class Lesson1 extends StatelessWidget {
-  const Lesson1({
+class DummyRecipe extends StatelessWidget {
+  const DummyRecipe({
     super.key,
   });
 
@@ -43,26 +59,40 @@ class Lesson1 extends StatelessWidget {
           height: 80,
           child: Row(
             children: [
-              Icon(Icons.person, size: 62),
+              Icon(Icons.person, size: 48),
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [Text('Jayden Tang'), Text('student')],
-              )
+                children: [
+                  Text('Felix Wong'),
+                  Text('Student'),
+                ],
+              ),
             ],
           ),
         ),
-        Expanded(
-          flex: 1,
+
+        // ! Our recipe here:
+        SizedBox(
+          height: 300,
           child: Row(
             children: [
               Expanded(
                 flex: 1,
                 child: Column(
+                  spacing: 16,
                   children: [
-                    Text('Pavlovas'),
                     Text(
-                        'Pavlova is a meringue-based dessert yada yada yada...'),
+                      'Strawberry Pavlova',
+                      style: TextStyle(
+                        fontSize: 24,
+                        color: Colors.pink.shade700,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text('My Recipe here'),
+
+                    // Rating:
                     Row(
                       children: [
                         Icon(Icons.star),
@@ -71,19 +101,18 @@ class Lesson1 extends StatelessWidget {
                         Icon(Icons.star),
                         Icon(Icons.star),
                         Spacer(),
-                        Text('170 reviews')
+                        Text('170 Reviews'),
                       ],
                     ),
+
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Icon(Icons.kitchen),
+                        Icon(Icons.book),
                         Icon(Icons.timelapse),
-                        Icon(Icons.food_bank)
+                        Icon(Icons.food_bank),
                       ],
                     ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Text('PREP:'),
                         Text('COOK:'),
@@ -91,11 +120,10 @@ class Lesson1 extends StatelessWidget {
                       ],
                     ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Text('25 mins:'),
-                        Text('1 hr:'),
-                        Text('4-6:'),
+                        Text('25 min'),
+                        Text('1 hr'),
+                        Text('4-6'),
                       ],
                     ),
                   ],
