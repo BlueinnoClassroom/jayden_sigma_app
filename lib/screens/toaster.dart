@@ -9,7 +9,7 @@ class Toaster extends StatelessWidget {
       child: ListView(
         children: [
           ListTile(
-            title: Center(child: Text('Toaster')),
+            title: Center(child: Text('i told you not to click this')),
             onTap: () {
               Navigator.pushReplacementNamed(context, '/ToasterScreen');
             },
