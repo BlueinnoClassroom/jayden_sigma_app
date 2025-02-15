@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class toaster extends StatelessWidget {
-  const toaster({super.key});
+class Toaster extends StatelessWidget {
+  const Toaster({super.key});
 
   @override
   Widget build(BuildContext context) {

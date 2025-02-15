@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:sigma_app/pokedex.dart';
-import 'package:sigma_app/pokemon.dart';
-import 'package:sigma_app/route_drawer.dart';
+import 'package:sigma_app/data/pokedex.dart';
+import 'package:sigma_app/data/pokemon.dart';
+import 'package:sigma_app/widgets/route_drawer.dart';
 
 class PokemonScreen extends StatelessWidget {
   const PokemonScreen({

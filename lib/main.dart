@@ -1,10 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:sigma_app/pkm_tcg_screen.dart';
-import 'package:sigma_app/pokedex.dart';
-import 'package:sigma_app/pokemon_screen.dart';
-import 'package:sigma_app/toaster.dart';
-import 'package:sigma_app/toaster_screen.dart';
+import 'package:sigma_app/screens/pkm_tcg_screen.dart';
+import 'package:sigma_app/screens/pokemon_screen.dart';
+import 'package:sigma_app/screens/toaster.dart';
+import 'package:sigma_app/screens/toaster_screen.dart';
 
 main() {
   runApp(MainApp());
@@ -26,7 +25,7 @@ class MainApp extends StatelessWidget {
 
         if (settings.name == '/???') {
           return CupertinoPageRoute(
-            builder: (context) => toaster(),
+            builder: (context) => Toaster(),
           );
         }
         if (settings.name == '/ToasterScreen') {

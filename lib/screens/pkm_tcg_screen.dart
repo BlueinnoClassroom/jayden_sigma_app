@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:sigma_app/route_drawer.dart';
+import 'package:sigma_app/widgets/route_drawer.dart';
 
-class ToasterScreen extends StatelessWidget {
-  const ToasterScreen({super.key});
+class PkmTcgScreen extends StatelessWidget {
+  const PkmTcgScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: RouteDrawer(),
       appBar: AppBar(
-        title: Text('Toasters :3'),
+        title: Text('PKM TCG'),
       ),
     );
   }
