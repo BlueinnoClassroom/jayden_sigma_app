@@ -8,7 +8,6 @@
             "name": "sigma_app",
             "request": "launch",
             "type": "dart",
-            "args": ["--enable-software-rendering"]
         },
         {
             "name": "sigma_app (profile mode)",
