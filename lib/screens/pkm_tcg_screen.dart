@@ -17,7 +17,7 @@ class PkmTcgScreen extends StatefulWidget {
 }
 
 class _PkmTcgScreenState extends State<PkmTcgScreen> {
-  final controller = ConfettiController(duration: Duration(seconds: 1))
+  final controller = ConfettiController(duration: Duration(seconds: 1));
   // ..play();
 
   final _allCards = <PokemonCard>[];
@@ -44,7 +44,7 @@ class _PkmTcgScreenState extends State<PkmTcgScreen> {
           IconButton(
             icon: Icon(Icons.refresh),
             onPressed: () {
-                            final rarities = [
+              final rarities = [
                 ('Common', 60),
                 ('Uncommon', 30),
                 ('Rare', 9),
@@ -66,7 +66,6 @@ class _PkmTcgScreenState extends State<PkmTcgScreen> {
               _drawResults.clear();
               pool.shuffle();
               _drawResults.addAll(pool.take(8));
-
 
               setState(() {}); // refresh the page
               _drawResults.clear();
