@@ -42,22 +42,22 @@ class _PkmTcgScreenState extends State<PkmTcgScreen> {
     _allCards.addAll(xy7.map((e) => PokemonCard.fromJson(e)));
     _allCards.shuffle();
 
-    _drawResults.addAll(_allCards.take(8));
+    _drawCard();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: RouteDrawer(),
-      appBar: AppBar(
-        title: Text('PKM TCG'),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.refresh),
-            onPressed: () => _drawCard(),
-          ),
-        ],
-      ),
+      // drawer: RouteDrawer(),
+      // appBar: AppBar(
+      //   title: Text('PKM TCG'),
+      //   actions: [
+      //     IconButton(
+      //       icon: Icon(Icons.refresh),
+      //       onPressed: () => _drawCard(),
+      //     ),
+      //   ],
+      // ),
       body: Stack(
         children: [
           GridView.builder(

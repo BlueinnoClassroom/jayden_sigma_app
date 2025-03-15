@@ -4,6 +4,7 @@ import 'package:sigma_app/screens/pkm_tcg_screen.dart';
 import 'package:sigma_app/screens/pokemon_screen.dart';
 import 'package:sigma_app/screens/toaster.dart';
 import 'package:sigma_app/screens/toaster_screen.dart';
+import 'package:sigma_app/survival_screen.dart';
 
 main() {
   runApp(MainApp());
@@ -16,6 +17,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       onGenerateRoute: (settings) {
         if (settings.name == '/pkm-tcg') {
           return CupertinoPageRoute(
@@ -36,7 +38,7 @@ class MainApp extends StatelessWidget {
 
         // if route is '/'
         return CupertinoPageRoute(
-          builder: (context) => PokemonScreen(),
+          builder: (context) => SurvivalScreen(),
         );
       },
       // home: PokemonScreen(),
