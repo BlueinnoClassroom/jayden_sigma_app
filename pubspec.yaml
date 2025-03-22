@@ -26,3 +26,4 @@ flutter:
     - images/pokedex/
     - images/pokedex/hires/
     - images/pokedex/sprites/
+    - tcg_data/
